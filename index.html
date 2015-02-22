@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html style='background-color: rgb(128,128,128);'>
+<head>
+	<title>Final</title>
+</head>
+
+<body onload="main();" oncontextmenu="return false;">
+    
+    <canvas id='diffuseCanvas' width="200" height="200" style="position: absolute; top: 7px; left: 7px; background: #000000"></canvas>
+    <canvas id='normalCanvas' width="200" height="200" style="position: absolute; top: 214px; left: 7px; background: #000000"></canvas>
+    <canvas id='specularCanvas' width="200" height="200" style="position: absolute; top: 421px; left: 7px; background: #000000"></canvas>
+    <canvas id='emissiveCanvas' width="200" height="200" style="position: absolute; top: 628px; left: 7px; background: #000000"></canvas>
+	<canvas id='objCanvas' width="1095" height="821" style="position: absolute; top: 7px; left: 214px;"></canvas>
+    
+    <p style="position: absolute; top: 10px; left: 1440px; font-size: 300%;">Position</p>
+    <p style="position: absolute; top: 104px; left: 1410px; color: rgb( 255, 0, 0 ); font-size: 150%;">X</p>
+    <input id='textBoxPositionX' type="number" style="position: absolute; top: 130px; left: 1440px;" onInput="UpdateCurrentlySelectedMeshValues();" disabled="disabled"></input>
+    <p style="position: absolute; top: 144px; left: 1410px; color: rgb( 0, 255, 0 ); font-size: 150%;">Y</p>
+    <input id='textBoxPositionY' type="number" style="position: absolute; top: 170px; left: 1440px;" onInput="UpdateCurrentlySelectedMeshValues();" disabled="disabled"></input>
+    <p style="position: absolute; top: 184px; left: 1410px; color: rgb( 0, 0, 255 ); font-size: 150%;">Z</p>
+    <input id='textBoxPositionZ' type="number" style="position: absolute; top: 210px; left: 1440px;" onInput="UpdateCurrentlySelectedMeshValues();" disabled="disabled"></input>
+    
+    <p style="position: absolute; top: 250px; left: 1440px; font-size: 300%;">Rotation</p>
+    <p style="position: absolute; top: 344px; left: 1350px; font-size: 150%;">Degrees</p>
+    <input id='textBoxRotationDeg' type="number" style="position: absolute; top: 370px; left: 1440px;" onInput="UpdateCurrentlySelectedMeshValues();" disabled="disabled"></input>
+    <p style="position:  absolute; top: 384px; left: 1381px; color: rgb( 255, 0, 0 ); font-size: 150%;">Roll</p>
+    <button id='buttonRoll' type="button" style="position: absolute; top: 410px; left: 1440px; font-size: 100%;" onclick="RotateCurrentlySelectedMesh( [ 1.0, 0.0, 0.0 ] );" disabled="disabled">Rotate</button>
+    <p style="position:  absolute; top: 424px; left: 1375px; color: rgb( 0, 255, 0 ); font-size: 150%;">Pitch</p>
+    <button id='buttonPitch' type="button" style="position: absolute; top: 450px; left: 1440px; font-size: 100%;" onclick="RotateCurrentlySelectedMesh( [ 0.0, 1.0, 0.0 ] );" disabled="disabled">Rotate</button>
+    <p style="position:  absolute; top: 464px; left: 1378px; color: rgb( 0, 0, 255 ); font-size: 150%;">Yaw</p>
+    <button id='buttonYaw' type="button" style="position: absolute; top: 490px; left: 1440px; font-size: 100%;" onclick="RotateCurrentlySelectedMesh( [ 0.0, 0.0, 1.0 ] );" disabled="disabled">Rotate</button>
+    
+    <p style="position: absolute; top: 530px; left: 1440px; font-size: 300%;">Scale</p>
+    <p style="position: absolute; top: 624px; left: 1350px; font-size: 150%;">Uniform</p>
+    <input id='textBoxScaleUniform' type="number" style="position: absolute; top: 650px; left: 1440px;" onInput="UpdateCurrentlySelectedMeshValues();" disabled="disabled"></input>
+    <p style="position: absolute; top: 664px; left: 1350px; color: rgb( 255, 0, 0 ); font-size: 150%;">Scale X</p>
+    <input id='textBoxScaleX' type="number" style="position: absolute; top: 690px; left: 1440px;" onInput="UpdateCurrentlySelectedMeshValues();" disabled="disabled"></input>
+    <p style="position: absolute; top: 704px; left: 1350px; color: rgb( 0, 255, 0 ); font-size: 150%;">Scale Y</p>
+    <input id='textBoxScaleY' type="number" style="position: absolute; top: 730px; left: 1440px;" onInput="UpdateCurrentlySelectedMeshValues();" disabled="disabled"></input>
+    <p style="position: absolute; top: 744px; left: 1350px; color: rgb( 0, 0, 255 ); font-size: 150%;">Scale Z</p>
+    <input id='textBoxScaleZ' type="number" style="position: absolute; top: 770px; left: 1440px;" onInput="UpdateCurrentlySelectedMeshValues();" disabled="disabled"></input>
+    
+    <img id='diffuseTexture' src="Default Images/NoMesh.png" hidden=true></img>
+    <img id='normalTexture' src="Default Images/NoMesh.png" hidden=true></img>
+    <img id='specularTexture' src="Default Images/NoMesh.png" hidden=true></img>
+    <img id='emissiveTexture' src="Default Images/NoMesh.png" hidden=true></img>
+    
+	<script type="text/javascript" src="glMatrix.js"></script>
+	<script type="text/javascript" src="Objects.js"></script>
+    <script type="text/javascript" src="Texture.js"></script>
+	<script type="text/javascript" src="Mesh3D.js"></script>
+    <script type="text/javascript" src="DebugGraphics.js"></script>
+    <script type="text/javascript" src="Keyboard.js"></script>
+    <script type="text/javascript" src="Mouse.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	
+</body>
+</html>
